@@ -1,0 +1,108 @@
+/*
+ * Global Stylesheet for all HTML pages
+ * Follows industry best practices for maintainability and scalability
+ */
+
+/* ===== BASE STYLES ===== */
+:root {
+    /* Define CSS variables for colors to ensure consistency and easy updates */
+    --color-primary: #ff99cc; /* Pastel pink */
+    --color-secondary: #99ccff; /* Pastel blue */
+    --font-main: 'Arial', sans-serif; /* Fallback font stack */
+    --max-width: 1200px; /* Max width for content */
+    --padding: 1rem; /* Default padding */
+    --margin: 0 auto; /* Center content horizontally */
+}
+
+/* Reset default margin and padding for consistency */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ensure HTML element takes full height */
+html {
+    height: 100%;
+}
+
+/* ===== GLOBAL STYLES ===== */
+body {
+    /* Apply pastel pink to pastel blue gradient background */
+    background: linear-gradient(to bottom, var(--color-primary), var(--color-secondary));
+    
+    /* Ensure gradient covers the entire viewport */
+    min-height: 100vh;
+    
+    /* Smooth scrolling for better UX */
+    scroll-behavior: smooth;
+    
+    /* Use the defined font */
+    font-family: var(--font-main);
+    
+    /* Improve readability */
+    line-height: 1.6;
+    color: #333; /* Default text color for contrast */
+}
+
+/* ===== LAYOUT STYLES ===== */
+.container {
+    width: 100%;
+    max-width: var(--max-width);
+    padding: var(--padding);
+    margin: var(--margin);
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    color: #0066cc; /* Default link color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #004499; /* Darker shade for hover state */
+}
+
+/* ===== UTILITY CLASSES ===== */
+.text-center { text-align: center; }
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.p-1 { padding: 0.5rem; }
+.p-2 { padding: 1rem; }
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .container {
+        padding: 0.5rem;
+    }
+    
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+}
+
+/* ===== ACCESSIBILITY ===== */
+/* Ensure sufficient color contrast for text */
+.high-contrast-text {
+    color: #000; /* Black text for high contrast */
+}
+
+/* Focus styles for keyboard navigation */
+:focus {
+    outline: 2px solid #0066cc;
+    outline-offset: 2px;
+}
